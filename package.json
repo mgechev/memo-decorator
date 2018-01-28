@@ -1,7 +1,7 @@
 {
-  "name": "memo",
+  "name": "memo-decorator",
   "version": "1.0.0",
-  "description": "Decorator that makes the methods of your classes perform memoization.",
+  "description": "Decorator for caching the results of your method calls using lodash.memoize",
   "main": "index.js",
   "scripts": {
     "test": "jest",
