@@ -8,7 +8,7 @@ Apply the decorator to a method of a class. The cache is local for the method bu
 
 ### Signature
 
-```ts
+```typescript
 interface Memo {
   (resolver?: Resolver) => (target: any, key: string, descriptor: PropertyDescriptor): PropertyDescriptor
 }
@@ -24,7 +24,7 @@ By default the resolver will use the first argument of the method as the key.
 
 ### Demo
 
-```ts
+```typescript
 import memo from './index';
 
 class Qux {
