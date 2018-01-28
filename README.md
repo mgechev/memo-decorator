@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mgechev/memo-decorator.svg?branch=master)](https://travis-ci.org/mgechev/memo-decorator)
+
 # Memo Decorator
 
 This decorator applies memoization to a method of a class.

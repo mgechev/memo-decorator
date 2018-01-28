@@ -1,0 +1,8 @@
+__tests__
+node_modules
+.travis.yml
+demo.ts
+index.ts
+package-lock.json
+preprocessor.js
+tsconfig.json
