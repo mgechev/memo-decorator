@@ -1,0 +1,23 @@
+{
+  "name": "memo",
+  "version": "1.0.0",
+  "description": "Decorator that makes the methods of your classes perform memoization.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mgechev/memo-decorator.git"
+  },
+  "keywords": ["memoization", "decorator"],
+  "author": "Minko Gechev <mgechev@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mgechev/memo/issues"
+  },
+  "homepage": "https://github.com/mgechev/memo#readme",
+  "dependencies": {
+    "lodash.memoize": "^4.1.2"
+  }
+}
