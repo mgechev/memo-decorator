@@ -9,9 +9,6 @@
     "outDir": "./dist",
     "lib": ["es2015", "dom"]
   },
-  "files": [
-    "index.ts"
-  ],
   "angularCompilerOptions": {
     "skipTemplateCodegen": true
   }
