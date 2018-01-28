@@ -22,7 +22,7 @@ export interface Resolver {
 
 `Resolver` is a function, which returns the key to be used for given set of arguments. For more information check [`lodash`](https://lodash.com/docs/4.17.4#memoize).
 
-By default the resolver will use the first argument of the method as the key.
+By default, the resolver will use the first argument of the method as the key.
 
 ### Demo
 
@@ -56,8 +56,8 @@ a.foo(2);
 // Invoke `bar` and return the result `42` gotten from the original `bar` implementation.
 a.bar(1);
 // Does not invoke the original `bar` implementation because of the specified `resolver`
-// which is passed to `memo`. For any arguments of the function the resolver will return
-// result `1` which will be used as key.
+// which is passed to `memo`. For any arguments of the function, the resolver will return
+// result `1` which will be used as the key.
 a.bar(2);
 
 const b = new Qx();
