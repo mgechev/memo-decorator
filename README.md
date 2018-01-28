@@ -8,6 +8,12 @@ This decorator applies memoization to a method of a class.
 
 Apply the decorator to a method of a class. The cache is local for the method but shared among all instances of the class. Strongly recommend you to **use this decorator only on pure methods.**
 
+Installation:
+
+```shell
+npm i memo-decorator --save
+```
+
 ### Signature
 
 ```typescript
