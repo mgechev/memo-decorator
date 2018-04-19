@@ -15,9 +15,9 @@
   "author": "Minko Gechev <mgechev@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mgechev/memo/issues"
+    "url": "https://github.com/mgechev/memo-decorator/issues"
   },
-  "homepage": "https://github.com/mgechev/memo#readme",
+  "homepage": "https://github.com/mgechev/memo-decorator#readme",
   "dependencies": {
     "lodash.memoize": "^4.1.2"
   },
