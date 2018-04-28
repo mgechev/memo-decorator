@@ -66,7 +66,7 @@ a.bar(1);
 // result `1` which will be used as the key.
 a.bar(2);
 
-const b = new Qx();
+const b = new Qux();
 // Does not invoke the method `foo` because there's already an entry
 // in the cache which associates the key `1` to the result `42` from the
 // invocation of the method `foo` by the instance `a`.
