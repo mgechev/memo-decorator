@@ -11,7 +11,10 @@
     "type": "git",
     "url": "git+https://github.com/mgechev/memo-decorator.git"
   },
-  "keywords": ["memoization", "decorator"],
+  "keywords": [
+    "memoization",
+    "decorator"
+  ],
   "author": "Minko Gechev <mgechev@gmail.com>",
   "license": "MIT",
   "bugs": {
@@ -27,10 +30,16 @@
     "typescript": "^2.6.2"
   },
   "jest": {
-    "moduleFileExtensions": ["ts", "tsx", "js"],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
     "transform": {
       "^.+\\.(ts|tsx)$": "<rootDir>/preprocessor.js"
     },
-    "testMatch": ["**/__tests__/*.(ts|tsx|js)"]
+    "testMatch": [
+      "**/__tests__/*.(ts|tsx|js)"
+    ]
   }
 }
