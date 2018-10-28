@@ -30,6 +30,21 @@ export interface Resolver {
 
 By default, the resolver will use the first argument of the method as the key.
 
+The easiest way to deal with more than one agrument using a resolver function would be
+
+```typescript
+import memo from './index';
+
+class Qux {
+  @memo((...args: any[]): string => JSON.stringify(args))
+  foo(a: number, b: number) {
+    return a * b;
+  }
+}
+```
+
+This way the resolver function will compare the result of `stringify` all the arguments against memoized calls input.
+
 ### Demo
 
 ```typescript
