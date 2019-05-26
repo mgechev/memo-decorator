@@ -33,7 +33,7 @@ By default, the resolver will use the first argument of the method as the key.
 The easiest way to deal with more than one agrument using a resolver function would be
 
 ```typescript
-import memo from './index';
+import memo from 'memo-decorator';
 
 class Qux {
   @memo((...args: any[]): string => JSON.stringify(args))
@@ -48,7 +48,7 @@ This way the resolver function will compare the result of `stringify` all the ar
 ### Demo
 
 ```typescript
-import memo from './index';
+import memo from 'memo-decorator';
 
 class Qux {
   @memo()
