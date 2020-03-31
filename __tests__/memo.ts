@@ -59,7 +59,7 @@ describe('memo decorator', () => {
   it('should work with resolve function', () => {
     let count = 0;
     class Foo {
-      @memo(() => 1)
+      @memo({ resolver: () => 1 })
       bar(num: number) {
         count++;
         return 42;

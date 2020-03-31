@@ -1,6 +1,6 @@
 {
   "name": "memo-decorator",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Decorator for caching the results of your method calls using lodash.memoize",
   "main": "index.js",
   "scripts": {
@@ -21,13 +21,10 @@
     "url": "https://github.com/mgechev/memo-decorator/issues"
   },
   "homepage": "https://github.com/mgechev/memo-decorator#readme",
-  "dependencies": {
-    "lodash.memoize": "^4.1.2"
-  },
   "devDependencies": {
-    "@types/jest": "^22.1.0",
-    "jest": "^22.1.4",
-    "typescript": "^2.6.2"
+    "@types/jest": "^25.1.4",
+    "jest": "^25.2.4",
+    "typescript": "^3.8.0"
   },
   "jest": {
     "moduleFileExtensions": [

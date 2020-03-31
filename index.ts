@@ -1,20 +1,51 @@
-declare var require: any;
-
-const memoize = require('lodash.memoize');
-
 export interface Resolver {
   (...args: any[]): any;
 }
 
-export default (resolver?: Resolver) => (
-  target: any,
-  key: string,
+export interface MapLike {
+  set: typeof Map.prototype.set;
+  get: typeof Map.prototype.get;
+  has: typeof Map.prototype.has;
+  clear: typeof Map.prototype.clear;
+}
+
+export interface Config {
+  resolver?: Resolver;
+  cache?: MapLike;
+}
+
+function memoize(func: Function, resolver: Resolver, cache: MapLike) {
+  const memoized = function() {
+    const args = arguments;
+    const key = resolver.apply(this, args);
+    const cache = memoized.cache;
+
+    if (cache.has(key)) {
+      return cache.get(key);
+    }
+
+    const result = func.apply(this, args);
+    memoized.cache = cache.set(key, result) || cache;
+    return result;
+  };
+  memoized.cache = cache;
+  return memoized;
+}
+
+const defaultResolver: Resolver = (...args: any[]) => args[0];
+
+export default (config: Config = {}) => (
+  _: any,
+  __: string,
   descriptor: PropertyDescriptor
 ): PropertyDescriptor => {
   if (typeof descriptor.value !== 'function') {
     throw new Error('Memoization can be applied only to methods');
   }
 
-  descriptor.value = memoize(descriptor.value, resolver);
+  const resolver = config.resolver ?? defaultResolver;
+  const cache = config.cache ?? new Map();
+
+  descriptor.value = memoize(descriptor.value, resolver, cache);
   return descriptor;
 };
