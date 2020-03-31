@@ -14,36 +14,33 @@ Installation:
 npm i memo-decorator --save
 ```
 
-### Signature
+### Configuration
 
-```typescript
-interface Memo {
-  (resolver?: Resolver) => (target: any, key: string, descriptor: PropertyDescriptor): PropertyDescriptor
-}
-
-export interface Resolver {
-  (...args: any[]): any;
+```ts
+export interface Config {
+  resolver?: Resolver;
+  cache?: MapLike;
 }
 ```
 
-`Resolver` is a function, which returns the key to be used for given set of arguments. For more information check [`lodash`](https://lodash.com/docs/4.17.4#memoize).
+- `Resolver` is a function, which returns the key to be used for given set of arguments. By default, the resolver will use the first argument of the method as the key.
+- `MapLike` is a cache instance. By default, the library would use `Map`.
 
-By default, the resolver will use the first argument of the method as the key.
-
-The easiest way to deal with more than one agrument using a resolver function would be
+Example:
 
 ```typescript
 import memo from 'memo-decorator';
 
 class Qux {
-  @memo((...args: any[]): string => JSON.stringify(args))
+  @memo({
+    resolver: (...args: any[]) => args[1],
+    cache: new WeakMap()
+  })
   foo(a: number, b: number) {
     return a * b;
   }
 }
 ```
-
-This way the resolver function will compare the result of `stringify` all the arguments against memoized calls input.
 
 ### Demo
 
@@ -57,7 +54,9 @@ class Qux {
     return 42;
   }
 
-  @memo(_ => 1)
+  @memo({
+    resolver: _ => 1
+  })
   bar(a: number) {
     console.log('bar: called');
     return 42;
