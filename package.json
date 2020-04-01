@@ -1,6 +1,6 @@
 {
   "name": "memo-decorator",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Decorator for caching the results of your method calls using lodash.memoize",
   "main": "index.js",
   "scripts": {

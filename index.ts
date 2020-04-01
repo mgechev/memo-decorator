@@ -2,11 +2,10 @@ export interface Resolver {
   (...args: any[]): any;
 }
 
-export interface MapLike {
-  set: typeof Map.prototype.set;
-  get: typeof Map.prototype.get;
-  has: typeof Map.prototype.has;
-  clear: typeof Map.prototype.clear;
+export interface MapLike<K = unknown, V = unknown> {
+  set(key: K, v: V): MapLike<K, V>;
+  get(key: K): V;
+  has(key: K): boolean;
 }
 
 export interface Config {
@@ -25,7 +24,7 @@ function memoize(func: Function, resolver: Resolver, cache: MapLike) {
     }
 
     const result = func.apply(this, args);
-    memoized.cache = cache.set(key, result) || cache;
+    memoized.cache = cache.set(key, result) ?? cache;
     return result;
   };
   memoized.cache = cache;
